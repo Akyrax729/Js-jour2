@@ -1,19 +1,22 @@
 // Tableau Ex 6
 
-function mostFrequent (arr) {
 
-    console.log ('Tableau normal : ', arr)
-    let countMax = 0
-    let elementMax = ' ';
+function mostFrequent(arr) {
+    let occurrences = {};
+    let maxCount = 0;
+    let mostFrequentElement = null;
 
-    for (let item of arr) {
-        let countElement = countOccurrence (arr, item)
-        if (countElement > countMax) {
-            countMax = countElement
-            elementMax = item 
-        } 
+    for (let element of arr) {
+        occurrences[element] = (occurrences[element] || 0) + 1;
+
+        if (occurrences[element] > maxCount) {
+            maxCount = occurrences[element];
+            mostFrequentElement = element;
+        }
     }
-    return elementMax
+
+    return mostFrequentElement;
 }
 
-mostFrequent([1,2,2,3,3,3,4,4,4,4])
+const tableau = [1, 2, 3, 2, 4, 2, 5, 3, 3, 3];
+console.log(`L'élément le plus fréquent est : ${mostFrequent(tableau)}`);

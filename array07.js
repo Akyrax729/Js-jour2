@@ -1,21 +1,14 @@
 // Tableau Ex 7
 
-function mostFrequent(arr) {
-    let occurrences = {};
-    let maxCount = 0;
-    let mostFrequentElement = null;
+function reverseWords (sentence) {
 
-    for (let element of arr) {
-        occurrences[element] = (occurrences[element] || 0) + 1;
+    let wordArray = sentence.split(" ");
+    const reversed = wordArray.reverse();
+    yoda = reversed.join(" ");
+    sentence = yoda
 
-        if (occurrences[element] > maxCount) {
-            maxCount = occurrences[element];
-            mostFrequentElement = element;
-        }
-    }
-
-    return mostFrequentElement;
+    return sentence
 }
 
-const tableau = [1, 2, 3, 2, 4, 2, 5, 3, 3, 3];
-console.log(`L'élément le plus fréquent est : ${mostFrequent(tableau)}`);
+let sentence = "I love programming";
+console.log(reverseWords(sentence));
